@@ -3,6 +3,7 @@ package helpers
 import (
 	"math/rand"
 	"reflect"
+	"time"
 )
 
 func InArray(val interface{}, array interface{}) (exists bool, index int) {
@@ -27,6 +28,7 @@ func InArray(val interface{}, array interface{}) (exists bool, index int) {
 
 
 func RandomInt(min, max int) int {
+	rand.Seed(time.Now().UnixNano())
 	return min + rand.Intn(max-min)
 }
 
